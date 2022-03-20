@@ -1,2 +1,15 @@
 server:
-  port: 8010
+  port: 8020
+
+spring:
+  application:
+    # 应用名称（nacos)
+    name: order-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        # 控制面板中的服务列表，可以用于区分 dev、prod 环境
+        namespace: public
