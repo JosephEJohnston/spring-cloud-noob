@@ -13,3 +13,9 @@ spring:
         password: nacos
         # 控制面板中的服务列表，可以用于区分 dev、prod 环境
         namespace: public
+        ephemeral: false # 永久实例，宕机也不会删除实例; 默认为 true（临时实例）
+
+        # service：默认取 ${spring.application.name}，也可以通过该选项配置
+        # group：默认 DEFAULT_GROUP 更细的相同特征的服务进行归类分组管理
+        # weight: 通常要结合 安装 权重的负载均衡策略，权重越高，分配流量越大
+        # metadata: version=1，可以结合元数据做扩展
