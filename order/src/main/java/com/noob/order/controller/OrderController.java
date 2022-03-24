@@ -1,5 +1,6 @@
 package com.noob.order.controller;
 
+import com.noob.order.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,12 +13,17 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private StockFeignService stockFeignService;
+
     @RequestMapping("/add")
     public String add() {
         System.out.println("下单成功");
 
         String msg = restTemplate.getForObject("http://stock-service/stock/reduct", String.class);
 
-        return "Hello World" + msg;
+        String msgSecond = stockFeignService.reduct();
+
+        return "Hello World" + msg + msgSecond;
     }
 }
