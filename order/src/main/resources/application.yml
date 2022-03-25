@@ -13,3 +13,23 @@ spring:
         password: nacos
         # 控制面板中的服务列表，可以用于区分 dev、prod 环境
         namespace: public
+
+# springboot 默认的日指级别是 info，feign 的 debug 日指级别就不会输入
+logging:
+  level:
+    com:
+      noob:
+        order:
+          feign: debug
+
+# feign 日志局部配置也可在此处配置
+feign:
+  client:
+    config:
+      product-service:
+        loggerLevel: BASIC
+        contract: feign.Contract.Default # 设置为默认的契约（还原成原生注解）
+        # 连接超时时间，默认 2s
+        connectTimeout: 5000
+        # 请求处理超时时间，默认 5s
+        readTimeout: 3000

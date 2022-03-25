@@ -5,6 +5,7 @@
     <modules>
         <module>order</module>
         <module>store</module>
+        <module>product</module>
     </modules>
     <groupId>com.noob</groupId>
     <artifactId>springcloudtest</artifactId>
