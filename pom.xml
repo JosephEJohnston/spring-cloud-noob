@@ -6,6 +6,7 @@
         <module>order</module>
         <module>store</module>
         <module>product</module>
+        <module>config-nacos</module>
     </modules>
     <groupId>com.noob</groupId>
     <artifactId>springcloudtest</artifactId>

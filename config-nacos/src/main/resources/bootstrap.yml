@@ -1,0 +1,13 @@
+# 必须以 bootstrap.yml 接受 spring cloud nacos config 配置
+spring:
+  application:
+    # 会自动根据服务名拉取 dataId 的配置文件
+    # 如果 dataId 和服务名不一致，则需要手动指定 dataId
+    name: com.noob.order.redis
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      config:
+        namespace: public

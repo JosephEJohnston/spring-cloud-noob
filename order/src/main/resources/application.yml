@@ -28,8 +28,11 @@ feign:
     config:
       product-service:
         loggerLevel: BASIC
-        contract: feign.Contract.Default # 设置为默认的契约（还原成原生注解）
+        # contract: feign.Contract.Default # 设置为默认的契约（还原成原生注解）
         # 连接超时时间，默认 2s
         connectTimeout: 5000
         # 请求处理超时时间，默认 5s
-        readTimeout: 3000
+        readTimeout: 10000
+        # 拦截器配置
+        # requestInterceptors[0]:
+        #   com.noob.order.interceptor.feign.CustomFeignInterceptor

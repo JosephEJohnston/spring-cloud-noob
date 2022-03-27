@@ -1,5 +1,6 @@
 package com.noob.order.config;
 
+import com.noob.order.interceptor.feign.CustomFeignInterceptor;
 import feign.Contract;
 import feign.Logger;
 import feign.Request;
@@ -34,5 +35,11 @@ public class FeignConfig {
     /*@Bean
     public Request.Options options() {
         return new Request.Options(5000, 10000);
+    }*/
+
+    // 自定义拦截器
+    /*@Bean
+    public CustomFeignInterceptor customFeignInterceptor() {
+        return new CustomFeignInterceptor();
     }*/
 }
