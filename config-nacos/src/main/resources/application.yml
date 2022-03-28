@@ -1,2 +1,10 @@
 server:
   port: 8050
+spring:
+  profiles:
+    # 建议根据命名空间区分开发环境
+    active: dev
+    # 在配置中心，可以通过 profile 进行配置
+    # 只有默认的配置文件才能结合 profile 进行使用
+    # 对应的 Dataid:${spring.application.name}-${profile}.${file-extension:properties}
+    # profile 的后缀必须跟随默认配置文件的格式来
