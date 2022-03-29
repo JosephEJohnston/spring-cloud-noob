@@ -13,8 +13,10 @@ public class ConfigApplication {
         // nacos 客户端每 10ms 去注册中心进行判断，根据 md5
         // 配置不同则进行拉取
 
-        String userName = applicationContext.getEnvironment().getProperty("user.name");
+        /*String userName = applicationContext.getEnvironment().getProperty("user.name");
         String userAge = applicationContext.getEnvironment().getProperty("user.age");
-        System.out.println(userName + ": " + userAge);
+        System.out.println(userName + ": " + userAge);*/
+        String userConfig = applicationContext.getEnvironment().getProperty("user.config");
+        System.out.println(userConfig);
     }
 }

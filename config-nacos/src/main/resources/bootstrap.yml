@@ -21,6 +21,17 @@ spring:
 
         # group 用来区分项目
         group: test-group
+        shared-configs:
+          - data-id: com.noob.common.properties # [0]
+            refresh: true
+            group: test-group
+          - data-id: com.noob.common2.properties # [1]
+            refresh: true
+            group: test-group
+        extension-configs[0]:
+          data-id: com.noob.common3.properties
+          refresh: true
+          group: test-group
 
 # 配置文件的优先级（优先级大的会覆盖优先级小的，并且会形成互补）
-# profile > 默认配置文件
+# profile > 默认配置文件 > extension-configs(下标越大，优先级越大) > shared-configs(下标越大，优先级越大)
