@@ -17,5 +17,4 @@ public class ConfigController {
     public String show() {
         return username;
     }
-
 }
